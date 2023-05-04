@@ -1,0 +1,83 @@
+dataset:
+    type: dict
+    required: True
+    schema:
+        name:
+            type: string
+            required: True
+        path: 
+            type: string
+        dataset_name_raw: 
+            type: string
+        dataset_name_truth: 
+            type: string
+        crop_size:
+            type: list
+            schema: 
+                type: integer
+        length: 
+            type: integer
+        include_centerline:
+            type: boolean
+        val:
+            type: boolean
+        test:
+            type: boolean
+        overlap:
+            type: boolean
+model:
+    type: dict
+    required: True
+    schema:
+        name:
+            type: string
+            required: True
+        pretrained:
+            type: string
+        in_channels:
+            type: integer
+        out_channels:
+            type: integer
+experiment:
+    type: dict
+    required: True
+    schema:
+        name:
+            type: string
+            required: True
+        trainer:
+            type: string
+        loss:
+            type: dict
+            required: True
+            schema:
+                name:
+                    type: string
+                    required: True
+        metric:
+            type: string
+            required: True
+        mode:
+            type: string
+            required: True
+        num_epochs:
+            type: integer
+            required: True
+        patience:
+            type: integer
+            required: True
+        microbatch_size:
+            type: integer
+        minibatch_sizes:
+            type: list
+            schema:
+                type: integer
+        learning_rates:
+            type: list
+            schema:
+                type: number
+        weight_decays:
+            type: list
+            schema:
+                type: number
+

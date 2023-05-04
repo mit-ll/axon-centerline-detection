@@ -1,0 +1,28 @@
+dataset:
+    name: H5Dataset
+    path: "./data/PVGPe"
+    dataset_name_raw: data
+    dataset_name_truth: truth
+    crop_size: [64, 128, 128]
+    augmentation: True
+    include_centerline: False
+model:
+    name: ResidualUNet3D
+    in_channels: 1
+    out_channels: 1
+    num_levels: 4
+    f_maps: 32
+experiment:
+    name: cldice
+    metric: validation_loss
+    mode: min
+    num_epochs: 500
+    steps_per_epoch: 8
+    patience: 20
+    microbatch_size: 8
+    minibatch_sizes: [16]
+    learning_rates: [0.0001]
+    weight_decays: [0.001]
+    loss:
+        name: CLDice
+        alpha: 0.5
