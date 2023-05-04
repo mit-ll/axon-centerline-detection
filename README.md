@@ -159,3 +159,7 @@ kill %<job #>       ->      terminates the job specified
 © 2023 Massachusetts Institute of Technology.
 
 The software/firmware is provided to you on an As-Is basis
+
+## Citation
+[![DOI](https://zenodo.org/badge/634872912.svg)](https://zenodo.org/badge/latestdoi/634872912)
+
